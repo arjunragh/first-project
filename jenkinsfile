@@ -1,11 +1,22 @@
 pipeline {
     agent any
+    environment {
+	DB_HOST = '1000'
+	USERNAME = 'ARJUN'
+	}
 
     stages {
         stage('Hello') {
             steps {
                 echo 'Hello World, I am making 2nd change'
+	 	echo 'My DB host is: ${DB_HOST}'
             }
         }
+    
+	Stage('Hi') {
+	    steps {
+		echo 'my name is: ${USERNAME}
+	}
     }
+	
 }
